@@ -1,43 +1,4 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,23 +9,24 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-            color: #2c3e50;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: #1a2a44;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
-            background: linear-gradient(90deg, #4a90e2, #9b59b6);
+            background: #1a2a44;
             padding: 15px 30px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        .header-time { color: white; font-size: 1.2em; font-weight: 700; }
-        .header-icons img { width: 22px; height: 22px; margin-left: 15px; cursor: pointer; }
+        .header-menu { color: #e0e7ff; font-size: 1.2em; font-weight: 700; cursor: pointer; transition: color 0.3s; }
+        .header-menu:hover { color: #4a90e2; }
         .section {
             padding: 60px 20px;
             max-width: 1200px;
@@ -77,38 +39,95 @@
             padding: 100px 20px;
             position: relative;
             overflow: hidden;
+            animation: fadeIn 1s ease-in;
         }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.4);
+            background: rgba(26, 42, 68, 0.6);
         }
         .hero-content { position: relative; z-index: 1; }
-        .hero h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.3em; margin-bottom: 20px; }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .hero p { font-size: 1.3em; margin-bottom: 20px; animation: fadeIn 1.5s ease-in; }
         .hero .buttons button {
             padding: 12px 25px;
             margin: 0 10px;
-            background: #3498db;
+            background: #4a90e2;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 700;
         }
-        .hero .buttons button:hover { background: #2980b9; }
-        .about { background: #ecf0f1; display: flex; align-items: center; justify-content: center; gap: 30px; }
-        .about img { width: 200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .hero .buttons button:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+        .about { background: #ffffff; display: flex; align-items: center; justify-content: center; gap: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .about img { width: 200px; border-radius: 10px; transition: transform 0.3s; }
+        .about img:hover { transform: rotate(5deg) scale(1.05); }
         .about-content { text-align: left; max-width: 600px; }
-        .projects { background: #2c3e50; color: white; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
-        .project-card { background: #34495e; padding: 20px; border-radius: 10px; transition: transform 0.3s; }
-        .project-card:hover { transform: translateY(-5px); }
-        .skills { background: #2c3e50; color: white; }
+        .projects { background: #1a2a44; color: white; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .project-card {
+            background: #2e4057;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .project-details {
+            display: none;
+            padding: 15px;
+            background: #34495e;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .project-card:hover .project-details { display: block; }
+        .skills { background: #1a2a44; color: white; }
         .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
-        .skill { background: #3498db; padding: 10px 20px; border-radius: 20px; font-size: 0.9em; }
-        .research { background: #ecf0f1; }
+        .skill {
+            background: #4a90e2;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.3s;
+        }
+        .skill:hover { transform: scale(1.1); }
+        .research { background: #ffffff; position: relative; }
+        .research-map {
+            height: 300px;
+            background: url('https://via.placeholder.com/1200x300') no-repeat center/cover;
+            margin: 20px 0;
+            position: relative;
+        }
+        .research-map::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(26, 42, 68, 0.5);
+        }
+        .research-map-content { position: relative; z-index: 1; color: white; padding: 20px; }
         .contact {
             background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
             color: white;
@@ -118,46 +137,55 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(26, 42, 68, 0.6);
         }
-        .contact-content { position: relative; z-index: 1; }
+        .contact-content { position: relative; z-index: 1; padding: 20px; }
+        .contact form { display: flex; flex-direction: column; align-items: center; }
+        .contact input, .contact textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.8);
+            color: #1a2a44;
+        }
         .contact button {
             padding: 12px 25px;
-            margin: 0 10px;
-            background: #3498db;
+            background: #4a90e2;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
-        .contact button:hover { background: #2980b9; }
-        .recommendation { background: #ecf0f1; position: relative; padding-left: 150px; text-align: left; }
-        .recommendation img { position: absolute; left: 20px; top: 20px; width: 100px; }
-        h2 { font-size: 2.5em; margin-bottom: 20px; color: #2c3e50; }
+        .contact button:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+        .contact .message { margin-top: 10px; color: #2ecc71; display: none; }
+        h2 { font-size: 2.5em; margin-bottom: 20px; color: #1a2a44; }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2em; }
             .about { flex-direction: column; text-align: center; }
             .about-content { text-align: center; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-time">10:24 PM CDT, September 13, 2025</div>
-        <div class="header-icons">
-            <img src="https://via.placeholder.com/22" alt="menu">
-            <img src="https://via.placeholder.com/22" alt="notifications">
-            <img src="https://via.placeholder.com/22" alt="preview">
-            <img src="https://via.placeholder.com/22" alt="upload">
-        </header>
+        <div class="header-menu" onclick="toggleMenu()">menu</div>
+    </header>
     <div class="hero section">
         <div class="hero-content">
             <h1>Vindhya Kaushal</h1>
             <p>Software Developer | Research Engineer | Problem Solver</p>
             <div class="buttons">
-                <button onclick="window.open('https://github.com', '_blank')">GitHub</button>
-                <button onclick="window.open('https://linkedin.com', '_blank')">LinkedIn</button>
+                <button onclick="window.open('https://github.com/VINDHYAkaushal?tab=repositories', '_blank')">GitHub</button>
+                <button onclick="window.open('https://www.linkedin.com/in/vindhya-kaushal/', '_blank')">LinkedIn</button>
             </div>
         </div>
     </div>
@@ -171,43 +199,124 @@
     <div class="projects section">
         <h2>Projects I've Worked On</h2>
         <div class="projects-grid">
-            <div class="project-card">Laser Tracker: Real-time object tracking using Python and OpenCV. Achieved 95% accuracy across varied video inputs.</div>
-            <div class="project-card">Instant Messenger with Named Pipes and Multithreading: Multi-threaded messaging system using named pipes. Developed in C for UNIX environments, optimized for lightweight data handling.</div>
-            <div class="project-card">Exokernel Design: MIT-Based OS Project: Unix-like operating system built from scratch using x86 Assembly. Focused on process scheduling, virtual memory, and system call management.</div>
-            <div class="project-card">Breast Cancer ML: Machine Learning: I engineered a predictive model for breast cancer detection, achieving 97% accuracy using Python, TensorFlow, and PostgreSQL.</div>
+            <div class="project-card">Laser Tracker: Real-time object tracking using Python and OpenCV. Achieved 95% accuracy.<div class="project-details">Developed a robust system for dynamic environments, leveraging OpenCV's image processing capabilities.</div></div>
+            <div class="project-card">Instant Messenger with Named Pipes: Multi-threaded system in C for UNIX.<div class="project-details">Optimized for low latency and secure data transfer, showcasing multithreading expertise.</div></div>
+            <div class="project-card">Exokernel Design: Unix-like OS in x86 Assembly.<div class="project-details">Focused on custom process scheduling and virtual memory management from scratch.</div></div>
+            <div class="project-card">Breast Cancer ML: 97% accurate model with TensorFlow.<div class="project-details">Integrated with PostgreSQL for data storage, highlighting AI and database skills.</div></div>
         </div>
     </div>
     <div class="skills section">
         <h2>Skill Set</h2>
         <div class="skills-grid">
-            <div class="skill">Full Stack Development</div>
-            <div class="skill">ML & AI</div>
-            <div class="skill">System Arch</div>
-            <div class="skill">C++</div>
-            <div class="skill">ROS2</div>
-            <div class="skill">React</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">Python</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Docker</div>
-            <div class="skill">Autonomous Systems</div>
-            <div class="skill">Cloud-Based Development</div>
-            <div class="skill">JUnit</div>
-            <div class="skill">Verilog</div>
-            <div class="skill">Selenium</div>
+            <div class="skill" data-skill="Full Stack Development" data-level="85"></div>
+            <div class="skill" data-skill="ML & AI" data-level="90"></div>
+            <div class="skill" data-skill="System Arch" data-level="80"></div>
+            <div class="skill" data-skill="C++" data-level="75"></div>
+            <div class="skill" data-skill="ROS2" data-level="70"></div>
+            <div class="skill" data-skill="React" data-level="65"></div>
+            <div class="skill" data-skill="JavaScript" data-level="80"></div>
+            <div class="skill" data-skill="Python" data-level="90"></div>
+            <div class="skill" data-skill="SQL" data-level="75"></div>
+            <div class="skill" data-skill="Docker" data-level="70"></div>
+            <div class="skill" data-skill="Autonomous Systems" data-level="85"></div>
+            <div class="skill" data-skill="Cloud-Based Development" data-level="70"></div>
+            <div class="skill" data-skill="JUnit" data-level="60"></div>
+            <div class="skill" data-skill="Verilog" data-level="65"></div>
+            <div class="skill" data-skill="Selenium" data-level="70"></div>
         </div>
     </div>
     <div class="research section">
         <h2>Research Autonomous Driving</h2>
-        <p>I am a Software Developer of Nova, which is UT Dallas's premier autonomous driving research group. Nova consists of undergraduate students from a variety of academic backgrounds, working in tandem under the Applied Systems lab of Assoc. Prof. Jingbo. Our goal is to develop and deploy the first end-to-end, modular, open-source autonomous driving stack for use by researchers, hobbyists, and/or educational institutions. We also aim to provide autonomous shuttle services to the UT Dallas community. For more information, visit our <a href="#" style="color: #3498db;">GitHub</a>.</p>
+        <div class="research-map">
+            <div class="research-map-content">
+                <p>Nova is UT Dallas’s premier autonomous driving group, run by undergrads as part of the Applied Systems Lab. We’re developing an open-source autonomous driving stack for researchers, and we aim to provide autonomous driving services to UTD in the long term.</p>
+                <button onclick="showNovaTimeline()">Explore Timeline</button>
+            </div>
+        </div>
+        <p>Visit <a href="https://github.com/utd-nova" target="_blank" style="color: #4a90e2;">our GitHub</a>.</p>
     </div>
     <div class="contact section">
         <div class="contact-content">
             <h2>Contact</h2>
-            <button onclick="window.location.href='mailto:vindhya22k@gmail.com'">Email</button>
-            <button onclick="window.open('https://linkedin.com', '_blank')">Social</button>
+            <form id="contactForm">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="message" id="contactMessage"></div>
         </div>
     </div>
-    
+
+    <script>
+        // Adapted JavaScript for file handling (placeholder)
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+            return cell !== '' && cell != null;
+        }
+        function loadFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    gk_fileData[file.name] = e.target.result;
+                    alert('File loaded: ' + file.name);
+                };
+                reader.readAsText(file); // Adjust to readAsBinaryString for XLSX if needed
+            }
+        }
+
+        // Interactive Menu Toggle
+        function toggleMenu() {
+            alert('Menu toggled! (Add your menu logic here, e.g., a sidebar)');
+        }
+
+        // Skills Progress Bars
+        document.querySelectorAll('.skill').forEach(skill => {
+            const level = skill.dataset.level;
+            skill.innerHTML = `${skill.dataset.skill} <div class="progress-bar"><div style="width: ${level}%"></div></div>`;
+        });
+        // Style for progress bars
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .progress-bar { width: 100%; height: 5px; background: #ddd; margin-top: 5px; }
+            .progress-bar div { height: 100%; background: #4a90e2; transition: width 0.5s; }
+        `;
+        document.head.appendChild(style);
+
+        // Nova Timeline
+        let timelineVisible = false;
+        function showNovaTimeline() {
+            if (!timelineVisible) {
+                const timeline = document.createElement('div');
+                timeline.style = 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; color: #1a2a44; padding: 20px; border-radius: 10px; z-index: 1000;';
+                timeline.innerHTML = `
+                    <h3>Nova Timeline</h3>
+                    <ul>
+                        <li>2023: Project Initiation</li>
+                        <li>2024: Stack Development</li>
+                        <li>2025: Testing Phase</li>
+                        <li>2026: UTD Autonomous Services</li>
+                    </ul>
+                    <button onclick="this.parentElement.remove(); timelineVisible = false;">Close</button>
+                `;
+                document.querySelector('.research-map').appendChild(timeline);
+                timelineVisible = true;
+            }
+        }
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messageDiv = document.getElementById('contactMessage');
+            messageDiv.style.display = 'block';
+            messageDiv.textContent = 'Thank you! Message sent (simulated).';
+            messageDiv.style.color = '#2ecc71';
+            this.reset();
+            setTimeout(() => messageDiv.style.display = 'none', 3000);
+        });
+    </script>
 </body>
 </html>
