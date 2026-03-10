@@ -99,6 +99,7 @@
 
             <h5>About</h5>
 
+
             <div class="intro-info">
 
                <img src="images/vindhyapicture.jpeg" alt="Vindhya Kaushal">
@@ -114,6 +115,7 @@
          <div class="col-six tab-full">
 
             <h3>Personal Info</h3>
+
 
             <ul class="info-list">
                <li>
@@ -143,6 +145,7 @@
          <div class="col-six tab-full">
 
             <h3>Skills</h3>
+
 
             <ul class="skill-bars">
                <li>
@@ -175,8 +178,11 @@
 
       </div>
 
-      <!-- Removed the resume button row completely -->
-      <!-- <div class="row button-section"> ... </div> -->
+      <div class="row button-section">
+         <div class="col-twelve">
+            <a href="#contact" title="Contact Me" class="button stroke smoothscroll">Contact Me</a>
+         </div>
+      </div>
 
    </section> <!-- /about -->
 
@@ -188,66 +194,85 @@
       <div class="row resume-timeline">
 
          <div class="col-twelve resume-header">
+
             <h2>Projects</h2>
-         </div>
+
+         </div> <!-- /resume-header -->
 
          <div class="col-twelve">
+
             <div class="timeline-wrap">
 
                <div class="timeline-block">
+
                   <div class="timeline-ico">
                      <i class="fa fa-code"></i>
                   </div>
+
                   <div class="timeline-header">
                      <h3>Sploink</h3>
                      <p>Real-time "are we on track?" coach for developers inside VS Code — watches coding (edits, errors, tests, commits, etc.), scores productivity/efficiency, gives live advice like "you're looping on the same bug — try something new" or "too much churn without checks — run tests now", with meter, momentum graph, and nudges to avoid getting stuck or wasting time.</p>
                   </div>
-               </div>
+
+               </div> <!-- /timeline-block -->
 
                <div class="timeline-block">
+
                   <div class="timeline-ico">
                      <i class="fa fa-code"></i>
                   </div>
+
                   <div class="timeline-header">
                      <h3>Laser Tracker</h3>
                      <p>Real-time object tracking with Python and OpenCV.</p>
                   </div>
-               </div>
+
+               </div> <!-- /timeline-block -->
 
                <div class="timeline-block">
+
                   <div class="timeline-ico">
                      <i class="fa fa-code"></i>
                   </div>
+
                   <div class="timeline-header">
                      <h3>Instant Messenger</h3>
                      <p>Multi-threaded system in C for UNIX using Named Pipes.</p>
                   </div>
-               </div>
+
+               </div> <!-- /timeline-block -->
 
                <div class="timeline-block">
+
                   <div class="timeline-ico">
                      <i class="fa fa-code"></i>
                   </div>
+
                   <div class="timeline-header">
                      <h3>Exokernel Design</h3>
                      <p>Unix-like OS in x86 Assembly.</p>
                   </div>
-               </div>
+
+               </div> <!-- /timeline-block -->
 
                <div class="timeline-block">
+
                   <div class="timeline-ico">
                      <i class="fa fa-code"></i>
                   </div>
+
                   <div class="timeline-header">
                      <h3>Breast Cancer ML</h3>
                      <p>97% accurate model with TensorFlow.</p>
                   </div>
-               </div>
+
+               </div> <!-- /timeline-block -->
 
             </div> <!-- /timeline-wrap -->
-         </div>
 
-      </div>
+         </div> <!-- /col-twelve -->
+
+      </div> <!-- /resume-timeline -->
 
    </section> <!-- /projects -->
 
@@ -260,51 +285,78 @@
 
       <div class="row section-intro">
          <div class="col-twelve">
+
             <h5>More</h5>
+
          </div>
-      </div>
+      </div> <!-- /section-intro -->
 
       <div class="row services-content">
 
          <div class="services-list">
 
             <div class="service">
+
                <span class="icon"><i class="fa fa-cogs"></i></span>
+
                <div class="service-content">
+
                   <h3>Research & Autonomous Driving</h3>
+
                   <p>Nova is UT Dallas’s premier autonomous driving group, run by undergrads as part of the Applied Systems Lab. We’re developing an open-source autonomous driving stack for researchers, and we aim to provide autonomous driving services to UTD in the long term.</p>
+
                   <p><a href="https://nova-utd.github.io/" target="_blank">Visit Nova GitHub</a></p>
+
                </div>
-            </div>
+
+            </div> <!-- /service -->
 
             <div class="service">
+
                <span class="icon"><i class="fa fa-globe"></i></span>
+
                <div class="service-content">
+
                   <h3>Languages</h3>
+
                   <ul class="skill-bars">
                      <li>
                         <div class="progress percent100"><span>100%</span></div>
                         <strong>English</strong>
                      </li>
                   </ul>
+
                </div>
-            </div>
+
+            </div> <!-- /service -->
 
             <div class="service">
+
                <span class="icon"><i class="fa fa-user"></i></span>
+
                <div class="service-content">
+
                   <h3>Personality</h3>
+
                   <p>Curious, detail-oriented, collaborative, problem-solver, quick learner.</p>
+
                </div>
-            </div>
+
+            </div> <!-- /service -->
 
             <div class="service">
+
                <span class="icon"><i class="fa fa-heart"></i></span>
+
                <div class="service-content">
+
                   <h3>Interests</h3>
+
                   <p>AI research, coding challenges, autonomous tech, hiking, reading about emerging technologies.</p>
+
                </div>
-            </div>
+
+            </div> <!-- /service -->
 
          </div> <!-- /services-content -->
 
@@ -317,10 +369,12 @@
 
       <div class="row section-intro">
          <div class="col-twelve">
+
             <h5>Contact</h5>
             <h1>Let's Get In Touch.</h1>
+
          </div>
-      </div>
+      </div> <!-- /section-intro -->
 
       <div class="row contact-form">
 
@@ -328,70 +382,89 @@
 
             <!-- form -->
             <form id="contactform" action="YOUR_FORMSPREE_OR_OTHER_BACKEND_URL" method="POST">
+
                <input type="text" name="name" placeholder="Your Name" required>
                <input type="email" name="_replyto" placeholder="Your Email" required>
                <textarea name="message" placeholder="Your Message" required></textarea>
                <input type="submit" value="Send Message">
+
             </form>
             <!-- Form End -->
 
             <!-- contact-warning -->
-            <div id="message-warning"></div>
+            <div id="message-warning">
+            </div>
             <!-- contact-success -->
             <div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!
+               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
             </div>
 
-         </div>
+         </div> <!-- /col-twelve -->
 
-      </div>
+      </div> <!-- /contact-form -->
 
       <div class="row contact-info">
 
          <div class="col-four tab-full">
+
             <div class="icon">
                <i class="icon-pin"></i>
             </div>
+
             <h5>Location</h5>
+
             <p>Richardson, Texas, USA</p>
+
          </div>
 
          <div class="col-four tab-full collapse">
+
             <div class="icon">
                <i class="icon-mail"></i>
             </div>
+
             <h5>Email Me At</h5>
+
             <p>your@email.com</p>
+
          </div>
 
          <div class="col-four tab-full">
+
             <div class="icon">
                <i class="icon-phone"></i>
             </div>
+
             <h5>Call Me At</h5>
+
             <p>+1 (Your Phone Number)</p>
+
          </div>
 
-      </div>
+      </div> <!-- /contact-info -->
 
    </section> <!-- /contact -->
 
 
    <!-- footer
    ================================================== -->
+
    <footer>
       <div class="row">
          <div class="col-six tab-full pull-right social">
+
             <ul class="footer-social">
                <li><a target="_blank" href="https://github.com/VINDHYAkaushal"><i class="fa fa-github"></i></a></li>
                <li><a target="_blank" href="https://www.linkedin.com/in/vindhya-kaushal/"><i class="fa fa-linkedin"></i></a></li>
             </ul>
+
          </div>
 
          <div id="go-top">
             <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
          </div>
-      </div>
+
+      </div> <!-- /row -->
    </footer>
 
    <div id="preloader">
