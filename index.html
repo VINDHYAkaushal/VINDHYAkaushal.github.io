@@ -1,329 +1,648 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-   <!--- basic page needs
-   ================================================== -->
-   <meta charset="utf-8">
-   <title>Vindhya Kaushal</title>
-   <meta name="description" content="Vindhya Kaushal - CS Student, AI & Deep Learning Enthusiast, Autonomous Systems Builder">
-   <meta name="author" content="Vindhya Kaushal">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vindhya Kaushal | AI Engineer & Autonomous Systems Builder</title>
+    <meta name="description" content="Computer Science student at UT Dallas | Building AI-powered autonomous systems, deep learning models, and real-time robotics. Passionate about turning ideas into production-ready technology.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/vindhyapicture.jpeg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --teal: #14f0c8;
+        }
+        
+        .tail-container {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
 
-   <!-- mobile specific metas
-   ================================================== -->
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
 
-   <!-- CSS
-   ================================================== -->
-   <link rel="stylesheet" href="css/base.css">
-   <link rel="stylesheet" href="css/main.css">
-   <link rel="stylesheet" href="css/vendor.css">
-   <!-- Owl Carousel CSS (already in vendor.css, but confirming) -->
-   <link rel="stylesheet" href="css/owl.carousel.css">
-   <link rel="stylesheet" href="css/owl.theme.css">
+        .typing {
+            overflow: hidden;
+            border-right: 3px solid #14f0c8;
+            white-space: nowrap;
+            animation: blink 0.7s step-end infinite;
+        }
 
-   <!-- Font Awesome for icons -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
 
-   <!-- script
-   ================================================== -->
-   <script src="js/modernizr.js"></script>
-   <script src="js/pace.min.js"></script>
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgb(20 240 200 / 0.25);
+        }
 
-   <!-- favicons
-   ================================================== -->
-   <link rel="icon" type="image/png" href="images/vindhyapicture.jpeg">
-</head>
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #14f0c8;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
 
-<body id="top">
-
-<!-- header
-   ================================================== -->
-   <header>
-    <div class="row">
-    <div class="top-bar">
-    <a class="menu-toggle" href="#"><span>Menu</span></a>
-    <div class="logo">
-         <a href="index.html">Vindhya Kaushal</a>
-      </div>
-    <nav id="main-nav-wrap">
-<ul class="main-navigation">
-<li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
-<li><a class="smoothscroll" href="#about" title="">About</a></li>
-<li><a class="smoothscroll" href="#projects" title="">Projects</a></li>
-<li><a class="smoothscroll" href="#MORE" title="">More</a></li>
-<li><a class="smoothscroll" href="#contact" title="">Contact</a></li>
-<!-- GitHub & LinkedIn icons (no text) -->
-<li class="social-icon"><a target="_blank" href="https://github.com/VINDHYAkaushal"><i class="fab fa-github"></i></a></li>
-<li class="social-icon"><a target="_blank" href="https://www.linkedin.com/in/vindhya-kaushal/"><i class="fab fa-linkedin"></i></a></li>
-</ul>
-</nav>
-    </div> <!-- /top-bar -->
-    </div> <!-- /row -->
-   </header> <!-- /header -->
-
-<!-- intro section
-   ================================================== -->
-   <section id="intro">
-    <div class="intro-overlay"></div>
-    <div class="intro-content">
-    <div class="row">
-    <div class="col-twelve">
-    <h5>Hello, World.</h5>
-    <h1>I'm Vindhya Kaushal.</h1>
-    <p class="intro-position">
-    <span>CS Student @ UT Dallas</span>
-    <span>AI & Deep Learning Enthusiast</span>
-    <span>Autonomous Systems Builder</span>
-    </p>
-    <a class="button stroke smoothscroll" href="#about" title="">Learn More</a>
-    </div>
-    </div>
-    </div> <!-- /intro-content -->
-   </section> <!-- /intro -->
-
-   <!-- about section
-   ================================================== -->
-   <section id="about">
-    <div class="row section-intro">
-    <div class="col-twelve">
-    <h5>About</h5>
-    <div class="intro-info">
-    <img src="images/vindhyapicture.jpeg" alt="Vindhya Kaushal">
-    <p class="lead">I'm a Computer Science student at The University of Texas at Dallas with over three years of experience developing AI-driven and autonomous systems. My work spans deep learning, sensor fusion, real-time system architecture, and operating systems development. I'm passionate about creating technology that evolves with the world's changing needs. Open to opportunities in AI/ML and software engineering.</p>
-    </div>
-    </div>
-    </div> <!-- /section-intro -->
-
-    <div class="row about-content">
-    <div class="col-six tab-full">
-    <h3>Personal Info</h3>
-    <ul class="info-list">
-    <li>
-    <strong>Name:</strong>
-    <span>Vindhya Kaushal</span>
-    </li>
-    <li>
-    <strong>Email:</strong>
-    <span>vindhya22k@gmail.com</span>
-    </li>
-    </ul> <!-- /info-list -->
-    </div>
-
-    <div class="col-six tab-full">
-    <h3>Skills</h3>
-<ul class="skill-bars">
-   <li>
-    <div class="progress percent90"><span>90%</span></div>
-    <strong>Python</strong>
-   </li>
-   <li>
-    <div class="progress percent90"><span>90%</span></div>
-    <strong>Deep Learning</strong>
-   </li>
-   <li>
-    <div class="progress percent90"><span>90%</span></div>
-    <strong>TensorFlow</strong>
-   </li>
-   <li>
-    <div class="progress percent85"><span>85%</span></div>
-    <strong>C / C++</strong>
-   </li>
-   <li>
-    <div class="progress percent85"><span>85%</span></div>
-    <strong>System Design</strong>
-   </li>
-   <li>
-    <div class="progress percent85"><span>85%</span></div>
-    <strong>Docker</strong>
-   </li>
-   <li>
-    <div class="progress percent80"><span>80%</span></div>
-    <strong>Autonomous Systems</strong>
-   </li>
-</ul> <!-- /skill-bars -->
-    </div>
-    </div>
-
-    <div class="row button-section">
-    <div class="col-twelve">
-    <a href="#contact" title="Contact Me" class="button stroke smoothscroll">Contact Me</a>
-    </div>
-    </div>
-
-   </section> <!-- /about -->
-
-   <!-- Projects Section - Image Slideshow/Carousel
-   ================================================== -->
-    <section id="projects">
-   <div class="overlay"></div>
-
-   <div class="row section-intro">
-      <div class="col-twelve">
-         <h5>Projects</h5>
-      </div>
-   </div>
-
-   <!-- Owl Carousel slideshow for project images -->
-   <div id="projects-slider" class="owl-carousel owl-theme">
-      <div class="item">
-         <img src="images/1.png" alt="Sploink Project">
-      </div>
-
-      <div class="item">
-         <img src="images/2.png" alt="Laser Tracker Project">
-      </div>
-
-      <div class="item">
-         <img src="images/3.png" alt="Traffic Light Detector Project">
-      </div>
-
-      <div class="item">
-         <img src="images/4.png" alt="Instant Messenger Project">
-      </div>
-   </div>
-
-  </section> <!-- /projects -->
-
-   <!-- services Section (MORE)
-   ================================================== -->
-   <section id="MORE">
-    <div class="overlay"></div>
-    <div class="row section-intro">
-    <div class="col-twelve">
-    <h5>More</h5>
-    </div>
-    </div>
-    <div class="row services-content">
-    <div class="services-list">
-    <div class="service">
-    <span class="icon"><i class="fa fa-cogs"></i></span>
-            <div class="service-content">
-             <h3>Research & Autonomous Driving</h3>
-            <p>Nova is UT Dallas’s premier autonomous driving group, run by undergrads as part of the Applied Systems Lab. We’re developing an open-source autonomous driving stack for researchers, and we aim to provide autonomous driving services to UTD in the long term.</p>
-            <p><a href="https://nova-utd.github.io/" target="_blank">Visit Nova GitHub</a></p>
-            </div>
-   </div>
-    <div class="service">
-    <span class="icon"><i class="fa fa-globe"></i></span>
-            <div class="service-content">
-             <h3>Languages</h3>
-            <ul class="skill-bars">
-   <li>
-    <div class="progress percent100"><span>100%</span></div>
-    <strong>English</strong>
-   </li>
-   </ul>
-            </div>
-            </div>
-       <div class="service">
-       <span class="icon"><i class="fa fa-user"></i></span>
-            <div class="service-content">
-              <h3>Personality</h3>
-            <p>Curious, detail-oriented, collaborative, problem-solver, quick learner.</p>
-            </div>
-</div>
-<div class="service">
-<span class="icon"><i class="fa fa-heart"></i></span>
-            <div class="service-content">
-             <h3>Interests</h3>
-            <p>AI research, coding challenges, autonomous tech, hiking, reading about emerging technologies.</p>
-            </div>
-   </div>
-    </div> <!-- /services-content -->
-   </section> <!-- /MORE -->
-
-   <!-- contact
-   ================================================== -->
-   <section id="contact">
-    <div class="row section-intro">
-    <div class="col-twelve">
-    <h5>Contact</h5>
-    <h1>Let's Get In Touch.</h1>
-    </div>
-    </div>
-
-    <div class="row contact-form">
-    <div class="col-twelve">
-            <!-- form -->
-            <form id="contactform" action="YOUR_FORMSPREE_OR_OTHER_BACKEND_URL" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <!-- Centered Send Message button -->
-      <input type="submit" value="Send Message" style="display: block; margin: 20px auto 0 auto; text-align: center;">
-  </form>
-      <!-- Form End -->
-            <div id="message-warning"></div>
-            <div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-            </div>
-         </div>
-    </div>
-
-    <div class="row contact-info">
-    <div class="col-four tab-full collapse" style="margin: 0 auto; text-align: center;">
-    <div class="icon" style="margin: 0 auto 10px auto; display: block;">
-    <i class="icon-mail"></i>
-    </div>
-    <h5>Email Me At</h5>
-    <p>vindhya22k@gmail.com</p>
-    </div>
-    </div> <!-- /contact-info -->
-   </section> <!-- /contact -->
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-      <div class="row">
-        <div class="col-six tab-full pull-right social">
-              <ul class="footer-social">
-               <li><a target="_blank" href="https://github.com/VINDHYAkaushal"><i class="fab fa-github"></i></a></li>
-               <li><a target="_blank" href="https://www.linkedin.com/in/vindhya-kaushal/"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-               </div>
-       <div id="go-top">
-         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-      </div>
-       </div> <!-- /row -->
-   </footer>
-
-   <div id="preloader">
-     <div id="loader"></div>
-   </div>
-
-   <!-- Java Script
-   ================================================== -->
-   <script src="js/jquery-2.1.3.min.js"></script>
-   <script src="js/plugins.js"></script>
-   <script src="js/main.js"></script>
-
-   <!-- Owl Carousel JS (initialize the slider) -->
-   <script>
-      $(document).ready(function(){
-         $("#projects-slider").owlCarousel({
-            items: 1,               // show 1 image at a time
-            loop: true,             // infinite loop
-            nav: true,              // show next/prev arrows
-            dots: true,             // show dots navigation
-            autoplay: true,         // auto slide
-            autoplayTimeout: 5000,  // 5 seconds per slide
-            autoplayHoverPause: true,
-            responsive: {
-               0: { items: 1 },
-               768: { items: 1 },
-               1000: { items: 1 }
+        .modal {
+            animation: modalPop 0.3s ease forwards;
+        }
+        
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(40px);
             }
-         });
-      });
-   </script>
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
 
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="tail-container bg-zinc-950 text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" onclick="smoothScrollTo('top')" class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-teal-500 rounded-2xl flex items-center justify-center text-black font-bold text-2xl logo-font">VK</div>
+                    <span class="text-2xl font-semibold tracking-tighter logo-font">Vindhya</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                    <a href="#" onclick="smoothScrollTo('about')" class="nav-link">About</a>
+                    <a href="#" onclick="smoothScrollTo('projects')" class="nav-link">Projects</a>
+                    <a href="#" onclick="smoothScrollTo('experience')" class="nav-link">Experience</a>
+                    <a href="#" onclick="smoothScrollTo('contact')" class="nav-link">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <a href="https://github.com/VINDHYAkaushal" target="_blank" 
+                       class="p-3 hover:bg-white/10 rounded-2xl transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vindhya-kaushal/" target="_blank" 
+                       class="p-3 hover:bg-white/10 rounded-2xl transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" onclick="smoothScrollTo('contact')" 
+                       class="px-6 py-3 bg-white text-black font-semibold rounded-3xl hover:bg-teal-400 hover:text-black transition-all flex items-center gap-x-2 text-sm">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-3">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-t border-white/10 py-4">
+            <div class="flex flex-col px-6 gap-y-6 text-lg">
+                <a href="#" onclick="toggleMobileMenu();smoothScrollTo('about')" class="hover:text-teal-400">About</a>
+                <a href="#" onclick="toggleMobileMenu();smoothScrollTo('projects')" class="hover:text-teal-400">Projects</a>
+                <a href="#" onclick="toggleMobileMenu();smoothScrollTo('experience')" class="hover:text-teal-400">Experience</a>
+                <a href="#" onclick="toggleMobileMenu();smoothScrollTo('contact')" class="hover:text-teal-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="top" class="hero-bg min-h-screen flex items-center relative">
+        <div class="absolute inset-0 bg-[radial-gradient(at_center,#14f0c820_0%,transparent_70%)]"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-20 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-teal-400 text-sm font-medium px-5 py-2 rounded-3xl">
+                    <div class="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+                    OPEN TO AI/ML ROLES
+                </div>
+
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter logo-font">
+                    Hi, I'm Vindhya Kaushal.
+                </h1>
+
+                <div class="text-4xl md:text-5xl font-medium text-zinc-400">
+                    I build <span id="typed" class="text-white typing inline-block min-w-[300px]">intelligent systems</span>
+                </div>
+
+                <p class="text-xl text-zinc-400 max-w-lg">
+                    Computer Science @ UT Dallas • 3+ years building production AI, autonomous vehicles, and real-time systems.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" onclick="smoothScrollTo('projects')" 
+                       class="px-8 py-5 bg-teal-500 hover:bg-teal-400 transition-all text-black font-semibold text-lg rounded-3xl flex items-center gap-x-3">
+                        See My Work
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" onclick="smoothScrollTo('contact')" 
+                       class="px-8 py-5 border border-white/30 hover:border-white transition-all font-medium text-lg rounded-3xl">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-x-8 pt-8 border-t border-white/10">
+                    <div>
+                        <div class="text-4xl font-semibold text-teal-400 stat-number" data-target="15">0</div>
+                        <div class="text-sm text-zinc-500">Projects Shipped</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-semibold text-teal-400 stat-number" data-target="3">0</div>
+                        <div class="text-sm text-zinc-500">Years Building AI</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-semibold text-teal-400 stat-number" data-target="97">0</div>
+                        <div class="text-sm text-zinc-500">% Model Accuracy</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="relative flex justify-center">
+                <div class="relative">
+                    <img src="images/vindhyapicture.jpeg" alt="Vindhya Kaushal" 
+                         class="w-80 md:w-96 rounded-3xl shadow-2xl shadow-teal-500/30 border border-white/10">
+                    <div class="absolute -bottom-6 -right-6 bg-zinc-900 border border-teal-400/30 rounded-3xl px-6 py-4 flex items-center gap-x-4">
+                        <div class="text-right">
+                            <div class="text-sm text-teal-400">Currently building</div>
+                            <div class="font-semibold">Nova UTD Autonomous Stack</div>
+                        </div>
+                        <i class="fas fa-car text-4xl text-teal-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-y-2 text-xs text-zinc-500">
+            <div>SCROLL TO EXPLORE</div>
+            <i class="fas fa-chevron-down animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-28 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <img src="images/vindhyapicture.jpeg" alt="Vindhya Kaushal" 
+                         class="rounded-3xl shadow-2xl w-full">
+                </div>
+                
+                <div class="md:col-span-7 space-y-8">
+                    <div class="inline text-teal-400 text-sm font-medium tracking-widest">CHAPTER 01 — ABOUT ME</div>
+                    <h2 class="text-5xl font-semibold logo-font tracking-tighter">Turning curiosity into code that moves the world.</h2>
+                    
+                    <div class="prose prose-invert text-lg text-zinc-300 max-w-none">
+                        <p>I'm a Computer Science student at The University of Texas at Dallas with a deep passion for AI, deep learning, and autonomous systems. I've spent the last three years building production-grade ML models, real-time perception systems, and even parts of an open-source autonomous driving stack at Nova UTD.</p>
+                        <p>From training YOLO models that detect traffic lights in real-time to designing multi-threaded operating system components in C — I love solving hard technical problems that have real impact.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-medium text-teal-400 mb-4">EDUCATION</h4>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="font-semibold">B.S. Computer Science</div>
+                                    <div class="text-zinc-400">University of Texas at Dallas • Expected 2027</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-teal-400 mb-4">CURRENT FOCUS</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="bg-white/10 px-4 py-2 rounded-2xl text-sm">Computer Vision</span>
+                                <span class="bg-white/10 px-4 py-2 rounded-2xl text-sm">Sensor Fusion</span>
+                                <span class="bg-white/10 px-4 py-2 rounded-2xl text-sm">ROS2</span>
+                                <span class="bg-white/10 px-4 py-2 rounded-2xl text-sm">Edge AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.linkedin.com/in/vindhya-kaushal/" target="_blank"
+                       class="inline-flex items-center gap-x-3 text-teal-400 hover:text-teal-300 font-medium">
+                        Download Full Resume 
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="py-28 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-teal-400 text-sm font-medium tracking-widest">CHAPTER 02 — SKILLS</div>
+                <h2 class="text-5xl font-semibold logo-font tracking-tighter mt-3">Technologies I wield</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill cards -->
+                <div class="bg-zinc-900 p-8 rounded-3xl hover:bg-zinc-800 transition-colors group">
+                    <i class="fab fa-python text-6xl text-yellow-400 mb-6"></i>
+                    <div class="font-semibold text-2xl mb-1">Python</div>
+                    <div class="text-zinc-400">Deep Learning • Data Pipelines • Automation</div>
+                    <div class="h-1 bg-yellow-400/30 mt-8 rounded-full overflow-hidden">
+                        <div class="h-1 w-[95%] bg-yellow-400 rounded-full"></div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-3xl hover:bg-zinc-800 transition-colors group">
+                    <i class="fas fa-brain text-6xl text-purple-400 mb-6"></i>
+                    <div class="font-semibold text-2xl mb-1">TensorFlow / PyTorch</div>
+                    <div class="text-zinc-400">YOLO • CNNs • Model Optimization</div>
+                    <div class="h-1 bg-purple-400/30 mt-8 rounded-full overflow-hidden">
+                        <div class="h-1 w-[90%] bg-purple-400 rounded-full"></div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-3xl hover:bg-zinc-800 transition-colors group">
+                    <i class="fas fa-car text-6xl text-teal-400 mb-6"></i>
+                    <div class="font-semibold text-2xl mb-1">Autonomous Systems</div>
+                    <div class="text-zinc-400">ROS2 • Sensor Fusion • Real-time Perception</div>
+                    <div class="h-1 bg-teal-400/30 mt-8 rounded-full overflow-hidden">
+                        <div class="h-1 w-[85%] bg-teal-400 rounded-full"></div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-3xl hover:bg-zinc-800 transition-colors group">
+                    <i class="fas fa-cogs text-6xl text-rose-400 mb-6"></i>
+                    <div class="font-semibold text-2xl mb-1">C / C++ &amp; Systems</div>
+                    <div class="text-zinc-400">Operating Systems • Docker • Low-level</div>
+                    <div class="h-1 bg-rose-400/30 mt-8 rounded-full overflow-hidden">
+                        <div class="h-1 w-[80%] bg-rose-400 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-28 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <div class="text-teal-400 text-sm font-medium tracking-widest">CHAPTER 03 — SELECTED WORK</div>
+                    <h2 class="text-5xl font-semibold logo-font tracking-tighter">Projects that shipped</h2>
+                </div>
+                <a href="https://github.com/VINDHYAkaushal" target="_blank"
+                   class="hidden md:flex items-center gap-x-2 text-zinc-400 hover:text-white">
+                    All projects on GitHub 
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="projects-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-28 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-teal-400 text-sm font-medium tracking-widest">CHAPTER 04 — EXPERIENCE</div>
+                <h2 class="text-5xl font-semibold logo-font tracking-tighter mt-3">Where I've made impact</h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-16">
+                <!-- Nova -->
+                <div class="flex gap-8">
+                    <div class="w-28 text-right text-sm font-medium text-zinc-400 shrink-0">
+                        2023 — Present
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-x-4">
+                            <div class="w-4 h-4 bg-teal-400 rounded-full"></div>
+                            <div>
+                                <div class="font-semibold text-xl">Autonomous Driving Researcher • Nova UTD</div>
+                                <div class="text-teal-400">Applied Systems Lab @ UT Dallas</div>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-zinc-300">Leading perception pipeline development for an open-source autonomous driving stack. Built real-time traffic light detection using YOLO and integrated camera + LiDAR sensor fusion. The stack is now being used by multiple student teams.</p>
+                        <a href="https://nova-utd.github.io/" target="_blank" class="inline-block mt-6 text-sm font-medium text-teal-400 hover:underline">→ Visit Nova UTD</a>
+                    </div>
+                </div>
+
+                <!-- Other projects are in cards above -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-28 bg-zinc-900">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <div class="text-teal-400 text-sm font-medium tracking-widest">CHAPTER 05 — LET'S BUILD SOMETHING</div>
+            <h2 class="text-5xl font-semibold logo-font tracking-tighter mt-4">Want to work together?</h2>
+            <p class="mt-6 text-xl text-zinc-400">Whether it's autonomous tech, deep learning research, or a full-stack challenge — I'm always up for interesting conversations.</p>
+
+            <form id="contactform" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="mt-16 space-y-8">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Your Name" required
+                           class="bg-zinc-800 border border-white/10 focus:border-teal-400 rounded-3xl px-8 py-6 text-lg outline-none transition">
+                    <input type="email" name="_replyto" placeholder="your@email.com" required
+                           class="bg-zinc-800 border border-white/10 focus:border-teal-400 rounded-3xl px-8 py-6 text-lg outline-none transition">
+                </div>
+                <textarea name="message" rows="6" placeholder="What are we building?" required
+                          class="w-full bg-zinc-800 border border-white/10 focus:border-teal-400 rounded-3xl px-8 py-6 text-lg outline-none transition"></textarea>
+                
+                <button type="submit"
+                        class="w-full py-7 bg-white text-black font-semibold text-xl rounded-3xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-x-3">
+                    SEND MESSAGE
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+
+            <div class="mt-12 text-sm text-zinc-400">
+                Or just email me directly at 
+                <a href="mailto:vindhya22k@gmail.com" class="text-teal-400 hover:underline">vindhya22k@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-zinc-400 text-sm">
+            <div class="flex justify-center gap-x-8 text-2xl mb-8">
+                <a href="https://github.com/VINDHYAkaushal" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/vindhya-kaushal/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>Made with passion &amp; too much coffee • © 2026 Vindhya Kaushal</p>
+        </div>
+    </footer>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-6">
+        <div class="modal bg-zinc-900 max-w-2xl w-full rounded-3xl overflow-hidden">
+            <div id="modal-image" class="h-80 bg-zinc-800"></div>
+            
+            <div class="p-10">
+                <div id="modal-title" class="text-3xl font-semibold mb-3"></div>
+                <div id="modal-tech" class="flex gap-3 mb-8"></div>
+                
+                <div id="modal-desc" class="text-zinc-300 leading-relaxed"></div>
+                
+                <div class="flex gap-4 mt-12">
+                    <a id="modal-github" href="#" target="_blank"
+                       class="flex-1 py-5 border border-white/30 hover:border-white rounded-3xl font-medium flex items-center justify-center gap-x-3">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <button onclick="closeModal()" 
+                            class="flex-1 py-5 bg-white text-black font-medium rounded-3xl">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script already loaded via CDN
+
+        function initTailwind() {
+            // Tailwind is ready
+        }
+
+        // Typing animation
+        const phrases = [
+            "intelligent systems",
+            "autonomous vehicles",
+            "deep learning models",
+            "real-time perception",
+            "production AI"
+        ];
+        let i = 0;
+        let currentPhrase = "";
+        let isDeleting = false;
+        let timer;
+
+        function type() {
+            const typedElement = document.getElementById("typed");
+            
+            if (isDeleting) {
+                currentPhrase = phrases[i].substring(0, currentPhrase.length - 1);
+            } else {
+                currentPhrase = phrases[i].substring(0, currentPhrase.length + 1);
+            }
+            
+            typedElement.textContent = currentPhrase;
+            
+            let typeSpeed = 70;
+            
+            if (!isDeleting && currentPhrase === phrases[i]) {
+                typeSpeed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && currentPhrase === "") {
+                isDeleting = false;
+                i = (i + 1) % phrases.length;
+                typeSpeed = 300;
+            }
+            
+            timer = setTimeout(type, typeSpeed);
+        }
+
+        // Project data (real projects from your GitHub + Nova)
+        const projects = [
+            {
+                id: 1,
+                title: "Sploink Project",
+                image: "images/1.png",
+                short: "Interactive learning platform",
+                desc: "Built an engaging educational application combining computer vision and gamification to teach complex algorithms in real time. Featured real-time feedback loops and adaptive difficulty.",
+                tech: ["Python", "OpenCV", "Flask"],
+                github: "https://github.com/VINDHYAkaushal"
+            },
+            {
+                id: 2,
+                title: "Laser Tracker",
+                image: "images/2.png",
+                short: "Real-time object tracking",
+                desc: "Developed a high-precision laser/object tracker using webcam input and OpenCV. Tracks colored objects with sub-50ms latency and smooth Kalman filtering. Deployed in multiple robotics prototypes.",
+                tech: ["Python", "OpenCV", "NumPy"],
+                github: "https://github.com/VINDHYAkaushal/LaserTracker"
+            },
+            {
+                id: 3,
+                title: "Traffic Light Detector",
+                image: "images/3.png",
+                short: "YOLO-powered perception",
+                desc: "Trained a custom YOLOv8 model to detect and classify traffic lights from both static images and live video feeds with 97%+ accuracy. Optimized for edge deployment and integrated into Nova UTD's autonomous stack.",
+                tech: ["YOLO", "TensorFlow", "Python"],
+                github: "https://github.com/VINDHYAkaushal/TRAFFIC-LIGHT-DETECTOR"
+            },
+            {
+                id: 4,
+                title: "Instant Messenger",
+                image: "images/4.png",
+                short: "Multi-threaded UNIX chat",
+                desc: "Built a fully functional instant messaging system using Named Pipes (FIFOs) in C. Supports multiple concurrent clients, real-time message passing, and custom protocol design. Classic systems programming project.",
+                tech: ["C", "Linux", "Multithreading"],
+                github: "https://github.com/VINDHYAkaushal/Namedpipes"
+            }
+        ];
+
+        function renderProjects() {
+            const container = document.getElementById("projects-grid");
+            container.innerHTML = "";
+            
+            projects.forEach(project => {
+                const cardHTML = `
+                    <div onclick="showProjectModal(${project.id})" 
+                         class="project-card bg-zinc-900 rounded-3xl overflow-hidden cursor-pointer group">
+                        <div class="h-60 overflow-hidden">
+                            <img src="${project.image}" alt="${project.title}" 
+                                 class="w-full h-full object-cover transition-all group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <div class="font-semibold text-2xl mb-2">${project.title}</div>
+                            <div class="text-teal-400 text-sm mb-4">${project.short}</div>
+                            <p class="text-zinc-400 line-clamp-3">${project.desc.substring(0, 140)}...</p>
+                            <div class="mt-8 flex gap-2 flex-wrap">
+                                ${project.tech.map(t => `<span class="text-[10px] bg-white/10 px-3 py-1 rounded-2xl">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        let currentProject = null;
+
+        function showProjectModal(id) {
+            currentProject = projects.find(p => p.id === id);
+            if (!currentProject) return;
+            
+            document.getElementById("modal-image").innerHTML = `
+                <img src="${currentProject.image}" class="w-full h-full object-cover">
+            `;
+            document.getElementById("modal-title").textContent = currentProject.title;
+            
+            const techContainer = document.getElementById("modal-tech");
+            techContainer.innerHTML = currentProject.tech.map(t => `
+                <span class="bg-white/10 px-5 py-2 rounded-3xl text-sm">${t}</span>
+            `).join('');
+            
+            document.getElementById("modal-desc").innerHTML = `
+                <p class="text-zinc-300">${currentProject.desc}</p>
+            `;
+            
+            document.getElementById("modal-github").href = currentProject.github;
+            
+            document.getElementById("project-modal").classList.remove("hidden");
+            document.getElementById("project-modal").classList.add("flex");
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("project-modal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        }
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        }
+
+        // Smooth scroll
+        function smoothScrollTo(section) {
+            if (section === "top") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+                const el = document.getElementById(section);
+                if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) mobileMenu.classList.add("hidden");
+        }
+
+        // Animate stat counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let count = 0;
+                const increment = Math.ceil(target / 60);
+                
+                const timer = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = count;
+                }, 30);
+            });
+        }
+
+        // Form success message (demo)
+        function initForm() {
+            const form = document.getElementById("contactform");
+            form.addEventListener("submit", function(e) {
+                // In real use Formspree will handle it
+                // This is just a nice UX demo
+                setTimeout(() => {
+                    alert("✅ Message sent! I'll reply within 24 hours.");
+                    form.reset();
+                }, 800);
+            });
+        }
+
+        // Keyboard escape for modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const modal = document.getElementById("project-modal");
+                if (!modal.classList.contains("hidden")) closeModal();
+            }
+        });
+
+        // Initialize everything
+        window.onload = function() {
+            initTailwind();
+            renderProjects();
+            type();                    // Start typing animation
+            animateCounters();
+            initForm();
+            
+            // Close modal when clicking outside content
+            const modal = document.getElementById("project-modal");
+            modal.addEventListener("click", function(e) {
+                if (e.target === modal) closeModal();
+            });
+        };
+    </script>
 </body>
 </html>
-
-
-
-
-
-
