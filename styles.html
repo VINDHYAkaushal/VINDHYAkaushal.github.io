@@ -3,46 +3,27 @@
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-
-   <!--- basic page needs
+   <!-- basic page needs
    ================================================== -->
    <meta charset="utf-8">
-   <title>Style Demo - Vindhya Kaushal Portfolio</title>
-   <meta name="description" content="Vindhya Kaushal Portfolio - CS Student, AI & Deep Learning Enthusiast">
+   <title>Vindhya Kaushal</title>
+   <meta name="description" content="Vindhya Kaushal - CS Student, AI & Deep Learning Enthusiast, Autonomous Systems Builder">
    <meta name="author" content="Vindhya Kaushal">
-
    <!-- mobile specific metas
    ================================================== -->
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
    <!-- CSS
    ================================================== -->
    <link rel="stylesheet" href="css/base.css">
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/vendor.css">
-   <style type="text/css" media="screen">
-      #styles {
-         background: white;
-         padding-top: 12rem;
-         padding-bottom: 12rem;
-      }
-      #styles .row {
-         max-width: 1024px;
-      }
-      #styles .section-intro {
-         max-width: 800px;
-      }
-   </style>
-
    <!-- script
    ================================================== -->
    <script src="js/modernizr.js"></script>
    <script src="js/pace.min.js"></script>
-
    <!-- favicons
    ================================================== -->
    <link rel="icon" type="image/png" href="images/vindhyapicture.jpeg">
-
 </head>
 
 <body id="top">
@@ -51,26 +32,24 @@
    ================================================== -->
    <header>
       <div class="row">
-
          <div class="top-bar">
             <a class="menu-toggle" href="#"><span>Menu</span></a>
-
             <div class="logo">
                <a href="index.html">Vindhya Kaushal</a>
             </div>
-
             <nav id="main-nav-wrap">
                <ul class="main-navigation">
-                  <li><a href="index.html#intro" title="">Home</a></li>
-                  <li><a href="index.html#about" title="">About</a></li>
-                  <li><a href="index.html#projects" title="">Projects</a></li>
-                  <li><a href="index.html#skills" title="">Skills</a></li>
-                  <li><a href="index.html#contact" title="">Contact</a></li>
-                  <li><a href="styles.html" title="">Style Demo</a></li>
+                  <li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
+                  <li><a class="smoothscroll" href="#about" title="">About</a></li>
+                  <li><a class="smoothscroll" href="#projects" title="">Projects</a></li>
+                  <li><a class="smoothscroll" href="#skills" title="">Skills</a></li>
+                  <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>
+                  <!-- GitHub & LinkedIn icons added here -->
+                  <li class="social-icon"><a target="_blank" href="https://github.com/VINDHYAkaushal"><i class="fab fa-github"></i></a></li>
+                  <li class="social-icon"><a target="_blank" href="https://www.linkedin.com/in/vindhya-kaushal/"><i class="fab fa-linkedin"></i></a></li>
                </ul>
             </nav>
          </div> <!-- /top-bar -->
-
       </div> <!-- /row -->
    </header> <!-- /header -->
 
@@ -86,274 +65,162 @@
                <p class="intro-position">
                   <span>CS Student @ UT Dallas</span>
                   <span>AI & Deep Learning Enthusiast</span>
+                  <span>Autonomous Systems Builder</span>
                </p>
-               <a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+               <a class="button stroke smoothscroll" href="#about" title="">Learn More</a>
             </div>
          </div>
       </div> <!-- /intro-content -->
-      <ul class="intro-social">
-         <li><a href="https://github.com/VINDHYAkaushal"><i class="fa fa-github"></i></a></li>
-         <li><a href="https://www.linkedin.com/in/vindhya-kaushal/"><i class="fa fa-linkedin"></i></a></li>
-      </ul> <!-- /intro-social -->
    </section> <!-- /intro -->
 
-   <!-- Style Demo
+   <!-- about section
    ================================================== -->
-   <section id="styles">
+   <section id="about">
       <div class="row section-intro">
          <div class="col-twelve">
-            <h1>Style Guide.</h1>
-            <p class="lead">This page demonstrates the visual styles and components available in the template. All elements are styled using the base, main, and vendor CSS files. Feel free to use or modify them for your portfolio.</p>
-         </div>
-      </div> <!-- /row -->
-
-      <div class="row">
-         <div class="col-six tab-full">
-            <h3>Paragraph and Image</h3>
-            <p>
-               <img width="120" height="120" class="pull-left" alt="sample-image" src="images/vindhyapicture.jpeg">
-               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.
-               Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu
-               posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum
-               odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra
-               condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque.
-               posuere nunc justo tempus leo.
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.
-               Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu
-               posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum
-               odio, ac blandit ante orci ut diam.
-            </p>
-            <p>
-               A <a href="#">link</a>,
-               <abbr title="this really isn't a very good description">abbreviation</abbr>,
-               <strong>strong text</strong>,
-               <em>em text</em>,
-               <del>deleted text</del>, and
-               <mark>this is a mark text.</mark>
-               <code>.code</code>
-            </p>
-         </div>
-
-         <div class="col-six tab-full">
-            <h3>Drop Caps</h3>
-            <p class="drop-cap">
-               Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-               there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the
-               Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque.
-            </p>
-
-            <h3>Small Print</h3>
-            <p>Buy one widget, get one free!
-               <small>(While supplies last. Offer expires on the vernal equinox. Not valid in Ohio.)</small>
-            </p>
-         </div>
-      </div> <!-- /row -->
-
-      <div class="row">
-         <div class="col-six tab-full">
-            <h3>Pull Quotes</h3>
-            <aside class="pull-quote">
-               <blockquote>
-                  <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-               </blockquote>
-            </aside>
-         </div>
-
-         <div class="col-six tab-full">
-            <h3>Block Quotes</h3>
-            <blockquote cite="http://where-i-got-my-info-from.com">
-               <p>Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.</p>
-               <cite><a href="#">Steve Jobs</a></cite>
-            </blockquote>
-            <blockquote>
-               <p>Good design is as little design as possible.</p>
-               <cite>Dieter Rams</cite>
-            </blockquote>
-         </div>
-      </div> <!-- /row -->
-
-      <div class="row half-bottom">
-         <div class="col-six tab-full">
-            <h3>Example Lists</h3>
-            <ol>
-               <li>Here is an example</li>
-               <li>of an ordered list.</li>
-               <li>A parent list item.
-                  <ul>
-                     <li>one</li>
-                     <li>two</li>
-                     <li>three</li>
-                  </ul>
-               </li>
-               <li>A list item.</li>
-            </ol>
-            <ul class="disc">
-               <li>Here is an example</li>
-               <li>of an unordered list.</li>
-            </ul>
-
-            <h3>Definition Lists</h3>
-            <h5>a) Multi-line Definitions (default)</h5>
-            <dl>
-               <dt><strong>This is a term</strong></dt>
-               <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
-               <dt><strong>Another Term</strong></dt>
-               <dd>And it gets a definition too, which is this line</dd>
-               <dd>This is a 2<sup>nd</sup> definition for a single term. A <code>dt</code> may be followed by multiple <code>dd</code>s.</dd>
-            </dl>
-         </div>
-
-         <div class="col-six tab-full">
-            <h3>Headers</h3>
-            <h1>H1 Heading</h1>
-            <h2>H2 Heading</h2>
-            <h3>H3 Heading</h3>
-            <h4>H4 Heading</h4>
-            <h5>H5 Heading</h5>
-            <h6>H6 Heading</h6>
-
-            <h3>Buttons</h3>
-            <p>
-               <a class="button button-primary full-width" href="#">Primary Button</a>
-               <a class="button full-width" href="#">Default Button</a>
-               <a class="button stroke full-width" href="#">Stroke Button</a>
-            </p>
-         </div>
-      </div> <!-- /row -->
-
-      <div class="row">
-         <div class="col-twelve">
-            <h3>Stats Tabs</h3>
-            <ul class="stats-tabs">
-               <li><a href="#">1,234 <em>Projects</em></a></li>
-               <li><a href="#">567 <em>Commits</em></a></li>
-               <li><a href="#">23,456 <em>Lines of Code</em></a></li>
-               <li><a href="#">3,456 <em>Coffee Cups</em></a></li>
-            </ul>
-         </div>
-      </div> <!-- /row -->
-
-      <div class="row half-bottom">
-         <div class="col-six tab-full">
-            <h3>Responsive Image</h3>
-            <p><img src="images/vindhyapicture.jpeg" alt="Vindhya Kaushal"></p>
-         </div>
-
-         <div class="col-six tab-full">
-            <h3>Responsive video</h3>
-            <div class="fluid-video-wrapper">
-               <!-- Replace with your video if needed -->
-               <iframe src="https://player.vimeo.com/video/14592941?title=0&amp;byline=0&amp;portrait=0&amp;color=60a5fa" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <h5>About</h5>
+            <div class="intro-info">
+               <img src="images/vindhyapicture.jpeg" alt="Vindhya Kaushal">
+               <p class="lead">I'm a Computer Science student at The University of Texas at Dallas with over three years of experience developing AI-driven and autonomous systems. My work spans deep learning, sensor fusion, real-time system architecture, and operating systems development. I specialize in building scalable, high-accuracy solutions — from traffic detection models to secure messaging systems like Sploink. I'm passionate about creating technology that evolves with the world's changing needs. Currently in Richardson, Texas, and open to opportunities in AI/ML and software engineering.</p>
             </div>
          </div>
-      </div> <!-- /row -->
+      </div> <!-- /section-intro -->
 
-      <div class="row add-bottom">
-         <div class="col-twelve">
-            <h3>Tables</h3>
-            <p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building a <code>table</code>.</p>
-            <div class="table-responsive">
-               <table>
-                  <thead>
-                     <tr>
-                        <th>Name</th>
-                        <th>Skill</th>
-                        <th>Level</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>Vindhya Kaushal</td>
-                        <td>Python</td>
-                        <td>Advanced</td>
-                     </tr>
-                     <tr>
-                        <td>Vindhya Kaushal</td>
-                        <td>Deep Learning</td>
-                        <td>Advanced</td>
-                     </tr>
-                  </tbody>
-               </table>
-            </div>
-         </div>
-      </div> <!-- /row -->
-
-      <div class="row">
+      <div class="row about-content">
          <div class="col-six tab-full">
-            <h3>Form Styles</h3>
-            <form>
-               <div>
-                  <label for="sampleInput">Your email</label>
-                  <input class="full-width" type="email" placeholder="test@mailbox.com" id="sampleInput">
-               </div>
-               <div>
-                  <label for="sampleRecipientInput">Reason for contacting</label>
-                  <div class="ss-custom-select">
-                     <select class="full-width" id="sampleRecipientInput">
-                        <option value="Option 1">Questions</option>
-                        <option value="Option 2">Report</option>
-                        <option value="Option 3">Others</option>
-                     </select>
+            <h3>Personal Info</h3>
+            <ul class="info-list">
+               <li><strong>Name:</strong><span>Vindhya Kaushal</span></li>
+               <li><strong>Email:</strong><span>your@email.com</span></li>
+               <li><strong>Location:</strong><span>Richardson, Texas, USA</span></li>
+               <!-- Removed text links for GitHub & LinkedIn – icons are now in header -->
+            </ul> <!-- /info-list -->
+         </div>
+
+         <div class="col-six tab-full">
+            <h3>Skills</h3>
+            <ul class="skill-bars">
+               <li><div class="progress percent90"><span>90%</span></div><strong>Python</strong></li>
+               <li><div class="progress percent90"><span>90%</span></div><strong>Deep Learning</strong></li>
+               <li><div class="progress percent90"><span>90%</span></div><strong>TensorFlow</strong></li>
+               <li><div class="progress percent85"><span>85%</span></div><strong>C / C++</strong></li>
+               <li><div class="progress percent85"><span>85%</span></div><strong>System Design</strong></li>
+               <li><div class="progress percent85"><span>85%</span></div><strong>Docker</strong></li>
+               <li><div class="progress percent80"><span>80%</span></div><strong>Autonomous Systems</strong></li>
+            </ul> <!-- /skill-bars -->
+         </div>
+      </div>
+
+      <div class="row button-section">
+         <div class="col-twelve">
+            <a href="#contact" title="Contact Me" class="button stroke smoothscroll">Contact Me</a>
+         </div>
+      </div>
+   </section> <!-- /about -->
+
+   <!-- Projects Section
+   ================================================== -->
+   <section id="projects" class="grey-section">
+      <div class="row resume-timeline">
+         <div class="col-twelve resume-header">
+            <h2>Projects</h2>
+         </div>
+         <div class="col-twelve">
+            <div class="timeline-wrap">
+               <div class="timeline-block">
+                  <div class="timeline-ico">
+                     <i class="fa fa-code"></i>
+                  </div>
+                  <div class="timeline-header">
+                     <h3>Sploink</h3>
+                     <p>Real-time "are we on track?" coach for developers inside VS Code — watches coding (edits, errors, tests, commits, etc.), scores productivity/efficiency, gives live advice like "you're looping on the same bug — try something new" or "too much churn without checks — run tests now", with meter, momentum graph, and nudges to avoid getting stuck or wasting time.</p>
                   </div>
                </div>
-               <label for="exampleMessage">Message</label>
-               <textarea class="full-width" placeholder="Your message" id="exampleMessage"></textarea>
-               <label class="add-bottom">
-                  <input type="checkbox">
-                  <span class="label-text">Send a copy to yourself</span>
-               </label>
-               <input class="button-primary" type="submit" value="Submit">
-            </form>
+               <div class="timeline-block">
+                  <div class="timeline-ico">
+                     <i class="fa fa-code"></i>
+                  </div>
+                  <div class="timeline-header">
+                     <h3>Laser Tracker</h3>
+                     <p>Real-time object tracking with Python and OpenCV.</p>
+                  </div>
+               </div>
+               <div class="timeline-block">
+                  <div class="timeline-ico">
+                     <i class="fa fa-code"></i>
+                  </div>
+                  <div class="timeline-header">
+                     <h3>Instant Messenger</h3>
+                     <p>Multi-threaded system in C for UNIX using Named Pipes.</p>
+                  </div>
+               </div>
+               <div class="timeline-block">
+                  <div class="timeline-ico">
+                     <i class="fa fa-code"></i>
+                  </div>
+                  <div class="timeline-header">
+                     <h3>Exokernel Design</h3>
+                     <p>Unix-like OS in x86 Assembly.</p>
+                  </div>
+               </div>
+               <div class="timeline-block">
+                  <div class="timeline-ico">
+                     <i class="fa fa-code"></i>
+                  </div>
+                  <div class="timeline-header">
+                     <h3>Breast Cancer ML</h3>
+                     <p>97% accurate model with TensorFlow.</p>
+                  </div>
+               </div>
+            </div> <!-- /timeline-wrap -->
          </div>
+      </div>
+   </section> <!-- /projects -->
 
-         <div class="col-six tab-full">
-            <h3>Skill Bars</h3>
-            <ul class="skill-bars">
-               <li>
-                  <div class="progress percent90"><span>90%</span></div>
-                  <strong>Python</strong>
-               </li>
-               <li>
-                  <div class="progress percent85"><span>85%</span></div>
-                  <strong>Deep Learning / ML</strong>
-               </li>
-               <li>
-                  <div class="progress percent80"><span>80%</span></div>
-                  <strong>C / C++</strong>
-               </li>
-               <li>
-                  <div class="progress percent75"><span>75%</span></div>
-                  <strong>System Architecture</strong>
-               </li>
-            </ul>
-
-            <h3>Alert Boxes</h3>
-
-            <div class="alert-box ss-error hideit">
-               <p>Error Message. Your Message Goes Here.</p>
-               <i class="fa fa-times close"></i>
-            </div><!-- /error -->
-
-            <div class="alert-box ss-success hideit">
-               <p>Success Message. Your Message Goes Here.</p>
-               <i class="fa fa-times close"></i>
-            </div><!-- /success -->
-
-            <div class="alert-box ss-info hideit">
-               <p>Info Message. Your Message Goes Here.</p>
-               <i class="fa fa-times close"></i>
-            </div><!-- /info -->
-
-            <div class="alert-box ss-notice hideit">
-               <p>Notice Message. Your Message Goes Here.</p>
-               <i class="fa fa-times close"></i>
-            </div><!-- /notice -->
+   <!-- Skills & More (adapted from services)
+   ================================================== -->
+   <section id="MORE">
+      <div class="overlay"></div>
+      <div class="row section-intro">
+         <div class="col-twelve">
+            <h5>More</h5>
          </div>
-      </div> <!-- /row -->
-
-   </section> <!-- /styles -->
+      </div>
+      <div class="row services-content">
+         <div class="services-list">
+            <div class="service">
+               <span class="icon"><i class="fa fa-cogs"></i></span>
+               <div class="service-content">
+                  <h3>Research & Autonomous Driving</h3>
+                  <p>Nova is UT Dallas’s premier autonomous driving group, run by undergrads as part of the Applied Systems Lab. We’re developing an open-source autonomous driving stack for researchers, and we aim to provide autonomous driving services to UTD in the long term.</p>
+                  <p><a href="https://nova-utd.github.io/" target="_blank">Visit Nova GitHub</a></p>
+               </div>
+            </div>
+            <div class="service">
+               <span class="icon"><i class="fa fa-globe"></i></span>
+               <div class="service-content">
+                  <h3>Languages</h3>
+                  <ul class="skill-bars">
+                     <li><div class="progress percent100"><span>100%</span></div><strong>English</strong></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="service">
+               <span class="icon"><i class="fa fa-user"></i></span>
+               <div class="service-content">
+                  <h3>Personality</h3>
+                  <p>Curious, detail-oriented, collaborative, problem-solver, quick learner.</p>
+               </div>
+            </div>
+            <div class="service">
+               <span class="icon"><i class="fa fa-heart"></i></span>
+               <div class="service-content">
+                  <h3>Interests</h3>
+                  <p>AI research, coding challenges, autonomous tech, hiking, reading about emerging technologies.</p>
+               </div>
+            </div>
+         </div> <!-- /services-content -->
+      </section> <!-- /MORE -->
 
    <!-- contact
    ================================================== -->
@@ -361,62 +228,44 @@
       <div class="row section-intro">
          <div class="col-twelve">
             <h5>Contact</h5>
-            <h1>I'd Love To Hear From You.</h1>
-            <p class="lead">Feel free to reach out for collaborations, questions, or opportunities in AI, ML, or software engineering.</p>
+            <h1>Let's Get In Touch.</h1>
          </div>
-      </div> <!-- /section-intro -->
-
+      </div>
       <div class="row contact-form">
          <div class="col-twelve">
             <!-- form -->
             <form id="contactform" action="YOUR_FORMSPREE_OR_OTHER_BACKEND_URL" method="POST">
-               <fieldset>
-                  <div class="form-field">
-                     <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-                  </div>
-                  <div class="form-field">
-                     <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-                  </div>
-                  <div class="form-field">
-                     <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-                  </div>
-                  <div class="form-field">
-                     <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-                  </div>
-                  <div class="form-field">
-                     <button class="submitform">Submit</button>
-                     <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>
-                        <div class="s-loader">
-                           <div class="bounce1"></div>
-                           <div class="bounce2"></div>
-                           <div class="bounce3"></div>
-                        </div>
-                     </div>
-                  </div>
-               </fieldset>
-            </form> <!-- Form End -->
-
+               <input type="text" name="name" placeholder="Your Name" required>
+               <input type="email" name="_replyto" placeholder="Your Email" required>
+               <textarea name="message" placeholder="Your Message" required></textarea>
+               <input type="submit" value="Send Message">
+            </form>
+            <!-- Form End -->
             <!-- contact-warning -->
             <div id="message-warning"></div>
             <!-- contact-success -->
             <div id="message-success">
                <i class="fa fa-check"></i>Your message was sent, thank you!<br>
             </div>
-         </div> <!-- /col-twelve -->
-      </div> <!-- /contact-form -->
-
-
-         <div class="col-four tab-full collapse">
-            <div class="icon">
-               <i class="icon-mail"></i>
-            </div>
-            <h5>Email Me At</h5>
-            <p>vindhya22k@email.com</p>
          </div>
-
-
-      </div> <!-- /contact-info -->
+      </div>
+      <div class="row contact-info">
+         <div class="col-four tab-full">
+            <div class="icon"><i class="icon-pin"></i></div>
+            <h5>Location</h5>
+            <p>Richardson, Texas, USA</p>
+         </div>
+         <div class="col-four tab-full collapse">
+            <div class="icon"><i class="icon-mail"></i></div>
+            <h5>Email Me At</h5>
+            <p>your@email.com</p>
+         </div>
+         <div class="col-four tab-full">
+            <div class="icon"><i class="icon-phone"></i></div>
+            <h5>Call Me At</h5>
+            <p>+1 (Your Phone Number)</p>
+         </div>
+      </div>
    </section> <!-- /contact -->
 
    <!-- footer
@@ -425,22 +274,14 @@
       <div class="row">
          <div class="col-six tab-full pull-right social">
             <ul class="footer-social">
-               <li><a target="_blank" href="https://github.com/VINDHYAkaushal"><i class="fa fa-github"></i></a></li>
-               <li><a target="_blank" href="https://www.linkedin.com/in/vindhya-kaushal/"><i class="fa fa-linkedin"></i></a></li>
+               <li><a target="_blank" href="https://github.com/VINDHYAkaushal"><i class="fab fa-github"></i></a></li>
+               <li><a target="_blank" href="https://www.linkedin.com/in/vindhya-kaushal/"><i class="fab fa-linkedin"></i></a></li>
             </ul>
          </div>
-
-         <div class="col-six tab-full">
-            <div class="copyright">
-               <span>© Copyright Vindhya Kaushal 2026.</span>
-               <span>Design inspired by <a href="http://www.styleshout.com/">styleshout</a></span>
-            </div>
-         </div>
-
          <div id="go-top">
             <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
          </div>
-      </div> <!-- /row -->
+      </div>
    </footer>
 
    <div id="preloader">
@@ -455,4 +296,3 @@
 
 </body>
 </html>
-
