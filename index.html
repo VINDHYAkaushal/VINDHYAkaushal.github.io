@@ -19,6 +19,9 @@
    <link rel="stylesheet" href="css/base.css">
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/vendor.css">
+   <!-- Owl Carousel CSS (already in vendor.css, but confirming) -->
+   <link rel="stylesheet" href="css/owl.carousel.css">
+   <link rel="stylesheet" href="css/owl.theme.css">
 
    <!-- Font Awesome for icons -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -88,7 +91,7 @@
     <h5>About</h5>
     <div class="intro-info">
     <img src="images/vindhyapicture.jpeg" alt="Vindhya Kaushal">
-    <p class="lead">I'm a Computer Science student at The University of Texas at Dallas with over three years of experience developing AI-driven and autonomous systems. My work spans deep learning, sensor fusion, real-time system architecture, and operating systems development. I specialize in building scalable, high-accuracy solutions — from traffic detection models to secure messaging systems like Sploink. I'm passionate about creating technology that evolves with the world's changing needs. Currently in Richardson, Texas, and open to opportunities in AI/ML and software engineering.</p>
+    <p class="lead">I'm a Computer Science student at The University of Texas at Dallas with over three years of experience developing AI-driven and autonomous systems. My work spans deep learning, sensor fusion, real-time system architecture, and operating systems development. I'm passionate about creating technology that evolves with the world's changing needs. Open to opportunities in AI/ML and software engineering.</p>
     </div>
     </div>
     </div> <!-- /section-intro -->
@@ -151,68 +154,34 @@
 
    </section> <!-- /about -->
 
-   <!-- Projects Section
+   <!-- Projects Section - Image Slideshow/Carousel
    ================================================== -->
    <section id="projects" class="grey-section">
-    <div class="row resume-timeline">
-    <div class="col-twelve resume-header">
-    <h2>Projects</h2>
-    </div>
-    <div class="col-twelve">
-    <div class="timeline-wrap">
-    <div class="timeline-block">
-    <div class="timeline-ico">
-    <i class="fa fa-code"></i>
-    </div>
-    <div class="timeline-header">
-    <h3>Sploink</h3>
-    <p>Real-time "are we on track?" coach for developers inside VS Code — watches coding (edits, errors, tests, commits, etc.), scores productivity/efficiency, gives live advice like "you're looping on the same bug — try something new" or "too much churn without checks — run tests now", with meter, momentum graph, and nudges to avoid getting stuck or wasting time.</p>
-    </div>
-    </div>
+      <div class="row section-intro">
+         <div class="col-twelve">
+            <h2>Projects</h2>
+         </div>
+      </div>
 
-    <div class="timeline-block">
-    <div class="timeline-ico">
-    <i class="fa fa-code"></i>
-    </div>
-    <div class="timeline-header">
-    <h3>Laser Tracker</h3>
-    <p>Real-time object tracking with Python and OpenCV.</p>
-    </div>
-    </div>
-
-    <div class="timeline-block">
-    <div class="timeline-ico">
-    <i class="fa fa-code"></i>
-    </div>
-    <div class="timeline-header">
-    <h3>Instant Messenger</h3>
-    <p>Multi-threaded system in C for UNIX using Named Pipes.</p>
-    </div>
-    </div>
-
-    <div class="timeline-block">
-    <div class="timeline-ico">
-    <i class="fa fa-code"></i>
-    </div>
-    <div class="timeline-header">
-    <h3>Exokernel Design</h3>
-    <p>Unix-like OS in x86 Assembly.</p>
-    </div>
-    </div>
-
-    <div class="timeline-block">
-    <div class="timeline-ico">
-    <i class="fa fa-code"></i>
-    </div>
-    <div class="timeline-header">
-    <h3>Breast Cancer ML</h3>
-    <p>97% accurate model with TensorFlow.</p>
-    </div>
-    </div>
-
-    </div> <!-- /timeline-wrap -->
-    </div>
-    </div>
+      <div class="row">
+         <div class="col-twelve">
+            <!-- Owl Carousel slideshow for project images -->
+            <div id="projects-slider" class="owl-carousel owl-theme">
+               <div class="item">
+                  <img src="images/1.png" alt="Sploink Project">
+               </div>
+               <div class="item">
+                  <img src="images/2.png" alt="Laser Tracker Project">
+               </div>
+               <div class="item">
+                  <img src="images/3.png" alt="Traffic Light Detector Project">
+               </div>
+               <div class="item">
+                  <img src="images/4.png" alt="Instant Messenger Project">
+               </div>
+            </div>
+         </div>
+      </div>
    </section> <!-- /projects -->
 
    <!-- services Section (MORE)
@@ -234,7 +203,6 @@
             <p><a href="https://nova-utd.github.io/" target="_blank">Visit Nova GitHub</a></p>
             </div>
    </div>
-
     <div class="service">
     <span class="icon"><i class="fa fa-globe"></i></span>
             <div class="service-content">
@@ -247,7 +215,6 @@
    </ul>
             </div>
             </div>
-
        <div class="service">
        <span class="icon"><i class="fa fa-user"></i></span>
             <div class="service-content">
@@ -255,7 +222,6 @@
             <p>Curious, detail-oriented, collaborative, problem-solver, quick learner.</p>
             </div>
 </div>
-
 <div class="service">
 <span class="icon"><i class="fa fa-heart"></i></span>
             <div class="service-content">
@@ -263,7 +229,6 @@
             <p>AI research, coding challenges, autonomous tech, hiking, reading about emerging technologies.</p>
             </div>
    </div>
-
     </div> <!-- /services-content -->
    </section> <!-- /MORE -->
 
@@ -331,6 +296,26 @@
    <script src="js/jquery-2.1.3.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
+
+   <!-- Owl Carousel JS (initialize the slider) -->
+   <script>
+      $(document).ready(function(){
+         $("#projects-slider").owlCarousel({
+            items: 1,               // show 1 image at a time
+            loop: true,             // infinite loop
+            nav: true,              // show next/prev arrows
+            dots: true,             // show dots navigation
+            autoplay: true,         // auto slide
+            autoplayTimeout: 5000,  // 5 seconds per slide
+            autoplayHoverPause: true,
+            responsive: {
+               0: { items: 1 },
+               768: { items: 1 },
+               1000: { items: 1 }
+            }
+         });
+      });
+   </script>
 
 </body>
 </html>
